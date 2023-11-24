@@ -1,0 +1,9 @@
+# clear DNS  
+rndc flush
+
+# look up DNS
+rndc dumpdb -cache
+cat /var/cache/bind/dump.db
+
+
+

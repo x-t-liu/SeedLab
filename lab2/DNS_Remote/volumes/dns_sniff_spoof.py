@@ -42,4 +42,4 @@ def spoof_dns(pkt):
 # Sniff UDP query packets and invoke spoof_dns().
 f = 'udp and dst port 53 and src host 10.9.0.53'
 # f = 'udp and dst port 53'
-pkt = sniff(iface='br-daacc471d85d', filter=f, prn=spoof_dns)      
+pkt = sniff(iface='br-44fb5a6f166d', filter=f, prn=spoof_dns)      

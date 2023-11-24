@@ -1,0 +1,11 @@
+
+
+
+task4
+# to add route
+ip route add 192.168.60.0/24 dev xtLiu0
+
+# look up route
+route -n
+
+

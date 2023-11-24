@@ -21,5 +21,5 @@ def rst_attack(pkt):
         
 striface=input("br...(iface):")
 # 使用sniff函数嗅探网络上的TCP包，指定iface参数为网卡接口，指定prn参数为回调函数
-sniff(filter="tcp", iface='br-59b40daefb8c', prn=rst_attack)
+sniff(filter="tcp", iface=striface, prn=rst_attack)
 
