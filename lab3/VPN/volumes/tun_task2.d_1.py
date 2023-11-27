@@ -21,7 +21,7 @@ ifname = ifname_bytes.decode('UTF-8')[:16].strip("\x00")
 print("Interface Name: {}".format(ifname))
 os.system("ip addr add 192.168.53.99/24 dev {}".format(ifname))
 os.system("ip link set dev {} up".format(ifname))
-
+os.system("ip route add 192.168.60.0/24 dev xtLiu0")
 
 while True:
 # Get a packet from the tun interface
@@ -38,10 +38,10 @@ while True:
    reply[ICMP].chksum = None 
    reply[IP].chksum = None 
    # Write the echo reply packet to the TUN interface
-   
+   print("Sent an echo reply packet("+ip[IP].dst+"->"+ip[IP].src+")")
    os.write(tun, bytes(reply)) 
    #os.write(tun, bytes("hello world!!!!!",encoding='utf-8'))
    
-   #print("Sent an echo reply packet("+ip[IP].dst+"->"+ip[IP].src+")")
+
   
   

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+#server.py
 import fcntl
 import struct
 import os
@@ -40,7 +40,8 @@ while True:
             data, (Client_IP, Client_PORT) = sock.recvfrom(2048)
             pkt = IP(data)
             print("From socket <==: {} --> {}".format(pkt.src, pkt.dst))
-            os.write(tun, bytes(pkt))
+            #os.write(tun, bytes(pkt))
+            send((pkt))
         if fd is tun:
             packet = os.read(tun, 2048)
             pkt = IP(packet)
