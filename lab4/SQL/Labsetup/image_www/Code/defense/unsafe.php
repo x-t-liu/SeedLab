@@ -22,13 +22,20 @@ $hashed_pwd = sha1($input_pwd);
 $conn = getDB();
 
 // do the query
-$stmt = $conn->prepare("SELECT id, name, eid, salary, ssn
-						FROM credential
-						WHERE name = ? and Password = ? ");
-$stmt->bind_param("ss", $input_uname, $hashed_pwd);
-$stmt->execute();
-$stmt->bind_result($id, $name, $eid, $salary, $ssn);
-$stmt->fetch();
+$sql = "SELECT name, local, gender
+	FROM USER_TABLE
+	WHERE id = $id AND password =’$pwd’ ";
+$result = $conn->query($sql)
+
+
+
+//$stmt = $conn->prepare("SELECT id, name, eid, salary, ssn
+//						FROM credential
+//						WHERE name = ? and Password = ? ");
+//$stmt->bind_param("ss", $input_uname, $hashed_pwd);
+//$stmt->execute();
+//$stmt->bind_result($id, $name, $eid, $salary, $ssn);
+//$stmt->fetch();
                         
                         
 if ($result->num_rows > 0) {
