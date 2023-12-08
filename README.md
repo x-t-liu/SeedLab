@@ -1,2 +1,2 @@
 # SeedLab
-my seedlab codes from seedubuntu20.04
+my seedlab codes on seedubuntu20.04
